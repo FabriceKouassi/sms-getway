@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +14,26 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::prefix('/')->middleware('guest')
+        ->group(function () {
+            Route::controller(AuthController::class)
+                ->group(function () {
+                    Route::get('/', 'showLoginForm')->name('page.login');
+                    Route::post('/', 'loginUser')->name('login');
+                    Route::get('/register', 'showRegisterForm')->name('page.register');
+                    Route::post('/register', 'registerUser')->name('register');
+                });
+        });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::prefix('admin_space')->middleware('auth')
+        ->group(function () {
+            Route::controller(AuthController::class)
+                ->group(function () {
+                    Route::get('/logout', 'logout')->name('logout');
+                });
+            Route::controller(DashboardController::class)
+                ->group(function () {
+                    Route::get('/dashboard', 'index')->name('dashboard');
+                });
+        });
+
