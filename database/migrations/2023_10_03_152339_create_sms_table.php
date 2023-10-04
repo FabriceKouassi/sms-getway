@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sms', function (Blueprint $table) {
             $table->id();
             $table->text('message');
-            $table->string('date_envoi');
+            $table->string('date_envoi')->nullable();
             $table->unsignedBigInteger('typesms_id');
             $table->foreign('typesms_id')
                     ->references('id')

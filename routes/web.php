@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ModeleAbsenceController;
 use App\Http\Controllers\ParentController;
+use App\Http\Controllers\SmsController;
 use App\Http\Controllers\TypeAnnonceController;
 use App\Http\Controllers\TypeSmsController;
 use Illuminate\Support\Facades\Route;
@@ -117,6 +118,19 @@ Route::prefix('admin_space')->middleware('auth')
                             Route::get('/update/{id}', 'showUpdateForm')->name('modele.updateForm');
                             Route::post('/update', 'update')->name('modele.update');
                             Route::get('/delete/{id}', 'delete')->name('modele.delete');
+                        });
+                });
+
+            Route::prefix('/sms')
+                ->group(function () {
+                    Route::controller(SmsController::class)
+                        ->group(function () {
+                            Route::get('/', 'index')->name('sms.all');
+                            Route::get('/save', 'showSaveForm')->name('sms.saveForm');
+                            Route::post('/save', 'save')->name('sms.save');
+                            Route::get('/update/{id}', 'showUpdateForm')->name('sms.updateForm');
+                            Route::post('/update', 'update')->name('sms.update');
+                            Route::get('/delete/{id}', 'delete')->name('sms.delete');
                         });
                 });
         });

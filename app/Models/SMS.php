@@ -13,7 +13,8 @@ class SMS extends Model
 
     protected $fillable = [
         'message',
-        'date_envoi'
+        'date_envoi',
+        'typesms_id'
     ];
 
     public function typeSms()

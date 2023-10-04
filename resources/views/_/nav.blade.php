@@ -117,7 +117,7 @@
             </ul>
         </li>
         <li class="menu-item">
-            <a href="#" class="menu-link">
+            <a href="{{ route('sms.all') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-chat"></i>
                 <div data-i18n="Chat">SMS</div>
             </a>
