@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('eleves', function (Blueprint $table) {
             $table->id();
+            $table->string('matricule');
             $table->string('nom');
-            $table->string('prenom');
+            $table->string('prenoms');
             $table->string('contact')->nullable();
 
             $table->unsignedBigInteger('parent_id');

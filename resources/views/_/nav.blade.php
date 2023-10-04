@@ -124,7 +124,7 @@
         </li>
         <li class="menu-item">
             <a href="{{ route('professeur.all') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-chat"></i>
+                <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Chat">Professeurs</div>
             </a>
         </li>
@@ -132,6 +132,12 @@
             <a href="{{ route('annonce.all') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-support"></i>
                 <div data-i18n="Support">Annonces</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('eleve.all') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Chat">Eleves</div>
             </a>
         </li>
         <li class="menu-item">

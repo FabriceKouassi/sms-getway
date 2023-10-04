@@ -12,6 +12,7 @@ class Eleve extends Model
     protected $table = 'eleves';
 
     protected $fillable = [
+        'matricule',
         'nom',
         'prenoms',
         'contact',
@@ -21,7 +22,7 @@ class Eleve extends Model
 
     public function _parent()
     {
-        return $this->belongsTo(Parent::class, 'parent_id');
+        return $this->belongsTo(_Parent::class, 'parent_id');
     }
 
     public function classe()

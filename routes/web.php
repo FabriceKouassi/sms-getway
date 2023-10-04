@@ -4,6 +4,7 @@ use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EleveController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ModeleAbsenceController;
 use App\Http\Controllers\ParentController;
@@ -159,6 +160,32 @@ Route::prefix('admin_space')->middleware('auth')
                             Route::get('/update/{id}', 'showUpdateForm')->name('annonce.updateForm');
                             Route::post('/update', 'update')->name('annonce.update');
                             Route::get('/delete/{id}', 'delete')->name('annonce.delete');
+                        });
+                });
+
+            Route::prefix('/eleve')
+                ->group(function () {
+                    Route::controller(EleveController::class)
+                        ->group(function () {
+                            Route::get('/', 'index')->name('eleve.all');
+                            Route::get('/save', 'showSaveForm')->name('eleve.saveForm');
+                            Route::post('/save', 'save')->name('eleve.save');
+                            Route::get('/update/{id}', 'showUpdateForm')->name('eleve.updateForm');
+                            Route::post('/update', 'update')->name('eleve.update');
+                            Route::get('/delete/{id}', 'delete')->name('eleve.delete');
+                        });
+                });
+
+            Route::prefix('/enseignant-classe')
+                ->group(function () {
+                    Route::controller(EleveController::class)
+                        ->group(function () {
+                            Route::get('/', 'index')->name('eleve.all');
+                            Route::get('/save', 'showSaveForm')->name('eleve.saveForm');
+                            Route::post('/save', 'save')->name('eleve.save');
+                            Route::get('/update/{id}', 'showUpdateForm')->name('eleve.updateForm');
+                            Route::post('/update', 'update')->name('eleve.update');
+                            Route::get('/delete/{id}', 'delete')->name('eleve.delete');
                         });
                 });
         });
