@@ -44,7 +44,18 @@ data-template="vertical-menu-template-free"
         <!-- Vendors CSS -->
         <link rel="stylesheet" href="{{ asset('model/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
         <link rel="stylesheet" href="{{ asset('model/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
+        {{-- ---- --}}
 
+            <link rel="stylesheet" href="{{ asset('custum/css/demo.css')}}">
+            <link rel="stylesheet" href="{{ asset('custum/css/style.css')}}">
+            <link rel="stylesheet" href="{{ asset('custum/css/modif.css')}}">
+
+            <!-- Bootstrap 5 CSS -->
+            <!-- Data Table CSS -->
+            <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+            <!-- Font Awesome CSS -->
+            <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+        {{-- ---- --}}
         <!-- Page CSS -->
 
         <!-- Helpers -->
@@ -96,7 +107,19 @@ data-template="vertical-menu-template-free"
     <!-- Page JS -->
     <script src="{{ asset('model/assets/js/dashboards-analytics.js')}}"></script>
 
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    {{-- ---- --}}
+
+    <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+    <!-- Data Table JS -->
+    <script src='https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js'></script>
+
+    <script src="{{ asset('custum/js/script.js') }}"></script>
+
+    <script src="{{ asset('insertData/typeSMS.js') }}"></script>
+
+    {{-- ---- --}}
+
   </body>
 </html>
