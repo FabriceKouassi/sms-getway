@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ModeleAbsenceController;
 use App\Http\Controllers\ParentController;
+use App\Http\Controllers\ProfesseurController;
 use App\Http\Controllers\SmsController;
 use App\Http\Controllers\TypeAnnonceController;
 use App\Http\Controllers\TypeSmsController;
@@ -131,6 +133,32 @@ Route::prefix('admin_space')->middleware('auth')
                             Route::get('/update/{id}', 'showUpdateForm')->name('sms.updateForm');
                             Route::post('/update', 'update')->name('sms.update');
                             Route::get('/delete/{id}', 'delete')->name('sms.delete');
+                        });
+                });
+
+            Route::prefix('/professeur')
+                ->group(function () {
+                    Route::controller(ProfesseurController::class)
+                        ->group(function () {
+                            Route::get('/', 'index')->name('professeur.all');
+                            Route::get('/save', 'showSaveForm')->name('professeur.saveForm');
+                            Route::post('/save', 'save')->name('professeur.save');
+                            Route::get('/update/{id}', 'showUpdateForm')->name('professeur.updateForm');
+                            Route::post('/update', 'update')->name('professeur.update');
+                            Route::get('/delete/{id}', 'delete')->name('professeur.delete');
+                        });
+                });
+
+            Route::prefix('/annonce')
+                ->group(function () {
+                    Route::controller(AnnonceController::class)
+                        ->group(function () {
+                            Route::get('/', 'index')->name('annonce.all');
+                            Route::get('/save', 'showSaveForm')->name('annonce.saveForm');
+                            Route::post('/save', 'save')->name('annonce.save');
+                            Route::get('/update/{id}', 'showUpdateForm')->name('annonce.updateForm');
+                            Route::post('/update', 'update')->name('annonce.update');
+                            Route::get('/delete/{id}', 'delete')->name('annonce.delete');
                         });
                 });
         });

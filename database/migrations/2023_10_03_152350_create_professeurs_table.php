@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('professeurs', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('prenoms');
             $table->string('contact');
-            $table->unsignedBigInteger('matieres_id');
-            $table->foreign('matieres_id')
+            $table->unsignedBigInteger('matiere_id');
+            $table->foreign('matiere_id')
                     ->references('id')
                     ->on('matieres')
                     ->onDelete('cascade')

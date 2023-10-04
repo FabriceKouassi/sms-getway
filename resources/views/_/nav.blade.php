@@ -123,6 +123,18 @@
             </a>
         </li>
         <li class="menu-item">
+            <a href="{{ route('professeur.all') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-chat"></i>
+                <div data-i18n="Chat">Professeurs</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('annonce.all') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-support"></i>
+                <div data-i18n="Support">Annonces</div>
+            </a>
+        </li>
+        <li class="menu-item">
             <a
             href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
             target="_blank"
@@ -418,15 +430,7 @@
         </li>
         <!-- Misc -->
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
-        <li class="menu-item">
-            <a
-            href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-            target="_blank"
-            class="menu-link">
-            <i class="menu-icon tf-icons bx bx-support"></i>
-            <div data-i18n="Support">Support</div>
-            </a>
-        </li>
+
         <li class="menu-item">
             <a
             href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"

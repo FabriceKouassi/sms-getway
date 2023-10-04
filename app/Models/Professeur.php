@@ -13,7 +13,7 @@ class Professeur extends Model
 
     protected $fillable = [
         'nom',
-        'prenom',
+        'prenoms',
         'contact',
         'matiere_id'
     ];
