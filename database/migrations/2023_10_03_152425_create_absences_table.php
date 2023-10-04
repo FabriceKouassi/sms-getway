@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('absences', function (Blueprint $table) {
             $table->id();
-            $table->text('description');
+            $table->text('motif');
             $table->string('date_absence');
 
-            $table->unsignedBigInteger('motif_id');
-            $table->foreign('motif_id')
+            $table->unsignedBigInteger('modele_id');
+            $table->foreign('modele_id')
                     ->references('id')
-                    ->on('motif_absences')
+                    ->on('modele_absences')
                     ->onDelete('cascade')
                     ->onUpdate('cascade');
 

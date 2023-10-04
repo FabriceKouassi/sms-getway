@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MotifAbsence extends Model
+class ModeleAbsence extends Model
 {
     use HasFactory;
 
-    protected $table ='motif_absences';
+    protected $table ='modele_absences';
 
     protected $fillable = [
         'libelle'
@@ -17,6 +17,6 @@ class MotifAbsence extends Model
 
     public function absences()
     {
-        return $this->hasMany(Absence::class, 'motif_id');
+        return $this->hasMany(Absence::class, 'modele_id');
     }
 }

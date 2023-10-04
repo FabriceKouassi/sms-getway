@@ -11,13 +11,13 @@ class Absence extends Model
 
     protected $table = 'absences';
     protected $fillable = [
-        'description',
+        'motif',
         'date_absence',
-        'motif_id',
+        'modele_id',
     ];
 
     public function motifs()
     {
-        return $this->belongsTo(MotifAbsence::class, 'motif_id');
+        return $this->belongsTo(ModeleAbsence::class, 'modele_id');
     }
 }

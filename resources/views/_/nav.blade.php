@@ -90,104 +90,36 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('parent.all') }}" class="menu-link">
                         <div data-i18n="Without navbar">Parents</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('classe.all') }}" class="menu-link">
                         <div data-i18n="Container">Classes</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('matiere.all') }}" class="menu-link">
                         <div data-i18n="Fluid">Matières</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('typeAnnonce.all') }}" class="menu-link">
                         <div data-i18n="Blank">Type d'annonce</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
-                        <div data-i18n="Blank">Motifs d'abscence</div>
+                    <a href="{{ route('modele.all') }}" class="menu-link">
+                        <div data-i18n="Blank">Modèle d'abscence</div>
                     </a>
                 </li>
             </ul>
         </li>
-
         <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-            <i class="menu-icon tf-icons bx bx-store"></i>
-            <div data-i18n="Front Pages">Front Pages</div>
-            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-            <ul class="menu-sub">
-            <li class="menu-item">
-                <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/landing-page.html"
-                class="menu-link"
-                target="_blank">
-                <div data-i18n="Landing">Landing</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/pricing-page.html"
-                class="menu-link"
-                target="_blank">
-                <div data-i18n="Pricing">Pricing</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/payment-page.html"
-                class="menu-link"
-                target="_blank">
-                <div data-i18n="Payment">Payment</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/checkout-page.html"
-                class="menu-link"
-                target="_blank">
-                <div data-i18n="Checkout">Checkout</div>
-                </a>
-            </li>
-            <li class="menu-item">
-                <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/help-center-landing.html"
-                class="menu-link"
-                target="_blank">
-                <div data-i18n="Help Center">Help Center</div>
-                </a>
-            </li>
-            </ul>
-        </li>
-{{--
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Apps &amp; Pages</span>
-        </li> --}}
-
-        <li class="menu-item">
-            <a
-            href=""
-            class="menu-link">
-            <i class="menu-icon tf-icons bx bx-envelope"></i>
-            <div data-i18n="Email">Email</div>
-            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a
-            href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
-            target="_blank"
-            class="menu-link">
-            <i class="menu-icon tf-icons bx bx-chat"></i>
-            <div data-i18n="Chat">Chat</div>
-            <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+            <a href="#" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-chat"></i>
+                <div data-i18n="Chat">SMS</div>
             </a>
         </li>
         <li class="menu-item">

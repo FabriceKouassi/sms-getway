@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class TypeSmsRequest extends FormRequest
+class ClasseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,14 @@ class TypeSmsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'libelle' => 'required',
+            'nom' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'libelle.required' => 'Champ requis',
+            'nom.required' => 'Champ requis',
         ];
     }
 

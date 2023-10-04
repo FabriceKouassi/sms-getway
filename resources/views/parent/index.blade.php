@@ -6,26 +6,32 @@
     <div class="content-wrapper">
 
         <div class="container-xxl flex-grow-1 container-p-y">
-            <a class="btn btn-primary" href="{{ route('typesms.saveForm') }}"><span class="icon-style">+</span> Ajouter {{ $title }}</a>
+            <a class="btn btn-primary" href="{{ route('parent.saveForm') }}"><span class="icon-style">+</span> Ajouter {{ $title }}</a>
             <div class="card mt-3">
                 <main class="cd__main">
                     <table id="example" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Libelle</th>
+                                <th>Noms</th>
+                                <th>Prénoms</th>
+                                <th>Contacts</th>
+                                <th>Adresse</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($typeSms as $item)
+                            @foreach ($parent as $item)
                                 <tr>
-                                    <td>{{ $item->libelle }}</td>
+                                    <td>{{ $item->nom }}</td>
+                                    <td>{{ $item->prenoms }}</td>
+                                    <td>{{ $item->contact }}</td>
+                                    <td>{{ $item->adresse }}</td>
                                     <td>
                                         {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveModal">
                                             Modifier
                                         </button> --}}
-                                        <a class="btn btn-primary" href="{{ route('typesms.updateForm', [$item->id]) }}"><i class="bx bx-edit-alt me-1"></i> Modifier</a>
-                                        <a class="btn btn-warning" href="{{ route('typesms.delete', [$item->id]) }}"><i class="bx bx-trash me-1"></i> Suprimer</a>
+                                        <a class="btn btn-primary" href="{{ route('parent.updateForm', [$item->id]) }}"><i class="bx bx-edit-alt me-1"></i> Modifier</a>
+                                        <a class="btn btn-warning" href="{{ route('parent.delete', [$item->id]) }}"><i class="bx bx-trash me-1"></i> Suprimer</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -39,7 +45,7 @@
             <!-- Modal -->
             <div class="modal fade" id="saveModal" data-bs-backdrop="static" tabindex="-1" style="display: none;" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                    <form class="modal-content" method="POST" action="{{ route('typesms.save') }}" id="saveForm">
+                    <form class="modal-content" method="POST" action="{{ route('parent.save') }}" id="saveForm">
                         @csrf
                         <div class="modal-header">
                             <h5 class="modal-title" id="saveModalTitle">Créer type de sms</h5>

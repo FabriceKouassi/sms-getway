@@ -12,9 +12,11 @@ class TypeSmsController extends Controller
     public function index()
     {
         $typeSms = TypeSMS::latest()->get();
+        $title = 'Type de SMS';
 
         $param = [
-            'typeSms' => $typeSms
+            'typeSms' => $typeSms,
+            'title' => $title
         ];
         return view('typeSms.index', $param);
     }
@@ -24,19 +26,11 @@ class TypeSmsController extends Controller
         return view('typeSms.save');
     }
 
-    public function save(Request $request)
+    public function save(TypeSmsRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'libelle' => 'required',
-        ]);
+        $data = $request->validated();
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
-        $typeSms = TypeSMS::create([
-            'libelle' => $request->libelle,
-        ]);
+        $typeSms = TypeSMS::create($data);
 
         $typeSms->save();
 
@@ -59,6 +53,7 @@ class TypeSmsController extends Controller
     public function update(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            'dataID' => 'required|numeric',
             'libelle' => 'required',
         ]);
 
@@ -66,13 +61,22 @@ class TypeSmsController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $typeSms = TypeSMS::where('id', $id)->first();
+        $typeSms = TypeSMS::where('id', $request->dataID)->first();
 
         if($typeSms==null) return redirect()->back();
 
         $typeSms->libelle = $request->libelle;
         $typeSms->save();
 
+        return redirect()->back();
+    }
+
+    public function delete(int $id)
+    {
+        $typeSms = TypeSMS::where('id', $id)->first();
+        if($typeSms==null) return redirect()->back();
+
+        $typeSms->delete();
         return redirect()->back();
     }
 }

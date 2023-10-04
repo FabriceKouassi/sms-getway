@@ -14,7 +14,7 @@ class _Parent extends Model
         'nom',
         'prenoms',
         'contact',
-        'address'
+        'adresse'
     ];
 
     public function eleves()
