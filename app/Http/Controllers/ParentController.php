@@ -32,6 +32,7 @@ class ParentController extends Controller
             'prenoms' => 'required',
             'contact' => 'required',
             'adresse' => 'required',
+            'email' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -43,6 +44,7 @@ class ParentController extends Controller
             'prenoms' => $request->prenoms,
             'contact' => $request->contact,
             'adresse' => $request->adresse,
+            'email' => $request->email,
         ]);
 
         $parent->save();
@@ -71,6 +73,7 @@ class ParentController extends Controller
             'prenoms' => 'required',
             'contact' => 'required',
             'adresse' => 'required',
+            'email' => 'required',
         ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
@@ -84,6 +87,7 @@ class ParentController extends Controller
         $parent->prenoms = $request->prenoms;
         $parent->contact = $request->contact;
         $parent->adresse = $request->adresse;
+        $parent->email = $request->email;
 
         $parent->save();
 

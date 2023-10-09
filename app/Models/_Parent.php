@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class _Parent extends Model
 {
@@ -14,7 +15,8 @@ class _Parent extends Model
         'nom',
         'prenoms',
         'contact',
-        'adresse'
+        'adresse',
+        'email'
     ];
 
     public function eleves()
@@ -32,8 +34,9 @@ class _Parent extends Model
         return $this->hasMany(RecevoirSmsAbsence::class, 'parent_id');
     }
 
-    public function enseigner_classes()
+    public function annonce_send(): BelongsToMany
     {
-        return $this->belongsTo(EnseignerClasse::class, 'parent_id');
+        return $this->belongsToMany(AnnonceSend::class, 'annonce_sends', 'sms_id', 'parent_id');
     }
+
 }

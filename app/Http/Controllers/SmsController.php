@@ -25,7 +25,7 @@ class SmsController extends Controller
     public function showSaveForm()
     {
         $title = 'SMS Prédefinis';
-        $typeSms = TypeSMS::oldest('libelle')->get();
+        $typeSms = TypeSMS::query()->with('sms')->oldest('libelle')->get()->filter(fn ($typeSms) => !$typeSms->sms()->count() > 0);
 
         $param = [
             'title' => $title,

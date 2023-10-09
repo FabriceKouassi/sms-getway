@@ -5,25 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EnseignerClasse extends Model
+class ProfesseurClasse extends Model
 {
     use HasFactory;
-    protected $table = 'enseigner_classe';
-    protected $casts = [
-        'classe_id' =>'json',
-    ];
+
+    protected $table = 'professeurs_classes';
     protected $fillable = [
         'professeur_id',
-        'classe_id',
-        'annee_scolaire',
+        'classe_id'
     ];
 
-    public function professeur()
+    public function professeurs()
     {
         return $this->belongsTo(Professeur::class, 'professeur_id');
     }
 
-    public function classe()
+    public function classes()
     {
         return $this->belongsTo(Classe::class, 'classe_id');
     }

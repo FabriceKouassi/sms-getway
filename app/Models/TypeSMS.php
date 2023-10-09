@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class TypeSMS extends Model
 {
@@ -14,7 +15,7 @@ class TypeSMS extends Model
         'libelle',
     ];
 
-    public function sms()
+    public function sms(): HasMany
     {
         return  $this->hasMany(SMS::class, 'typesms_id');
     }

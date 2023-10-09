@@ -128,16 +128,31 @@
                 <div data-i18n="Chat">Professeurs</div>
             </a>
         </li>
-        <li class="menu-item">
+        {{-- <li class="menu-item">
             <a href="{{ route('annonce.all') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-support"></i>
                 <div data-i18n="Support">Annonces</div>
+            </a>
+        </li> --}}
+        <li class="menu-item">
+            <a href="{{ route('annonce.all') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-support"></i>
+                <div data-i18n="Support">Envoyer Annonces</div>
             </a>
         </li>
         <li class="menu-item">
             <a href="{{ route('eleve.all') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Chat">Eleves</div>
+            </a>
+        </li>
+
+        <li class="menu-header small text-uppercase"><span class="menu-header-text"></span></li>
+
+        <li class="menu-item">
+            <a href="{{ route('prendreClasse.all') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Affectation professeurs</div>
             </a>
         </li>
         <li class="menu-item">

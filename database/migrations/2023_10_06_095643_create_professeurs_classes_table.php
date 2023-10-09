@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Classe;
+use App\Models\Professeur;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,13 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parents', function (Blueprint $table) {
+        Schema::create('professeurs_classes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenoms');
-            $table->string('contact');
-            $table->string('adresse');
-            $table->string('email');
+            $table->foreignIdFor(Professeur::class)->constrained();
+            $table->foreignIdFor(Classe::class)->constrained();
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parents');
+        Schema::dropIfExists('professeurs_classes');
     }
 };

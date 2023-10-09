@@ -64,14 +64,14 @@ class ProfesseurController extends Controller
 
     public function showUpdateForm(int $id)
     {
-        $professeur = SMS::where('id', $id)->first();
-        $typeSms = TypeSMS::oldest('libelle')->get();
-        $title = 'Type de l\'annonce';
+        $professeur = Professeur::where('id', $id)->first();
+        $matieres = Matiere::oldest('nom')->get();
+        $title = 'Professeur';
 
         $param = [
             'professeur' => $professeur,
             'title' => $title,
-            'typeSms' => $typeSms
+            'matieres' => $matieres
         ];
 
         return view('professeur.update', $param);
@@ -81,20 +81,26 @@ class ProfesseurController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'dataID' => 'required|numeric',
-            'typeSms' => 'required|numeric',
-            'message' => 'required',
+            'matiere' => 'required|numeric',
+            'nom' => 'required',
+            'prenoms' => 'required',
+            'contact' => 'required',
         ]);
 
         if ($validator->fails()) {
+            dd($request->all());
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $professeur = SMS::where('id', $request->dataID)->first();
+        $professeur = Professeur::where('id', $request->dataID)->first();
 
         if($professeur==null) return redirect()->back();
 
-        $professeur->typeprofesseur_id = $request->typeSms;
-        $professeur->message = $request->message;
+        $professeur->nom = $request->nom;
+        $professeur->prenoms = $request->prenoms;
+        $professeur->contact = $request->contact;
+        $professeur->matiere_id = $request->matiere;
+
         $professeur->save();
 
         return redirect()->back();
@@ -102,7 +108,7 @@ class ProfesseurController extends Controller
 
     public function delete(int $id)
     {
-        $professeur = SMS::where('id', $id)->first();
+        $professeur = Professeur::where('id', $id)->first();
         if($professeur==null) return redirect()->back();
 
         $professeur->delete();

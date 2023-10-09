@@ -44,6 +44,13 @@
                                     <input type="text" class="form-control" id="basic-icon-default-fullname" placeholder="Saisir l'adresse" name="adresse" aria-label="Saisir l'adresse" aria-describedby="basic-icon-default-fullname2">
                                 </div>
                             </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="basic-icon-default-fullname">Email</label>
+                                <div class="input-group input-group-merge">
+                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
+                                    <input type="text" class="form-control" id="basic-icon-default-fullname" placeholder="Saisir l'email" name="email" aria-label="Saisir l'email" aria-describedby="basic-icon-default-fullname2">
+                                </div>
+                            </div>
                             <a href="{{ route('parent.all')}}">Retour</a>
                             <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </form>

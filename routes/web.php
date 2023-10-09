@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnnonceController;
+use App\Http\Controllers\AnnonceSendController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\DashboardController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\EleveController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ModeleAbsenceController;
 use App\Http\Controllers\ParentController;
+use App\Http\Controllers\PrendreClasseController;
 use App\Http\Controllers\ProfesseurController;
 use App\Http\Controllers\SmsController;
 use App\Http\Controllers\TypeAnnonceController;
@@ -150,16 +152,35 @@ Route::prefix('admin_space')->middleware('auth')
                         });
                 });
 
-            Route::prefix('/annonce')
+            Route::prefix('/annonce-send')
                 ->group(function () {
-                    Route::controller(AnnonceController::class)
+                    Route::controller(AnnonceSendController::class)
                         ->group(function () {
                             Route::get('/', 'index')->name('annonce.all');
+                            Route::post('/', 'sendAnnonceByMail')->name('annonce.mail');
+
                             Route::get('/save', 'showSaveForm')->name('annonce.saveForm');
                             Route::post('/save', 'save')->name('annonce.save');
                             Route::get('/update/{id}', 'showUpdateForm')->name('annonce.updateForm');
                             Route::post('/update', 'update')->name('annonce.update');
                             Route::get('/delete/{id}', 'delete')->name('annonce.delete');
+
+                        });
+                });
+
+            Route::prefix('/absence-send')
+                ->group(function () {
+                    Route::controller(AnnonceSendController::class)
+                        ->group(function () {
+                            Route::get('/', 'index')->name('annonce.all');
+                            Route::post('/', 'sendAnnonceByMail')->name('annonce.mail');
+
+                            Route::get('/save', 'showSaveForm')->name('annonce.saveForm');
+                            Route::post('/save', 'save')->name('annonce.save');
+                            Route::get('/update/{id}', 'showUpdateForm')->name('annonce.updateForm');
+                            Route::post('/update', 'update')->name('annonce.update');
+                            Route::get('/delete/{id}', 'delete')->name('annonce.delete');
+
                         });
                 });
 
@@ -176,16 +197,16 @@ Route::prefix('admin_space')->middleware('auth')
                         });
                 });
 
-            Route::prefix('/enseignant-classe')
+            Route::prefix('/affectation-professeur')
                 ->group(function () {
-                    Route::controller(EleveController::class)
+                    Route::controller(PrendreClasseController::class)
                         ->group(function () {
-                            Route::get('/', 'index')->name('eleve.all');
-                            Route::get('/save', 'showSaveForm')->name('eleve.saveForm');
-                            Route::post('/save', 'save')->name('eleve.save');
-                            Route::get('/update/{id}', 'showUpdateForm')->name('eleve.updateForm');
-                            Route::post('/update', 'update')->name('eleve.update');
-                            Route::get('/delete/{id}', 'delete')->name('eleve.delete');
+                            Route::get('/', 'index')->name('prendreClasse.all');
+                            Route::get('/save', 'showSaveForm')->name('prendreClasse.saveForm');
+                            Route::post('/save', 'save')->name('prendreClasse.save');
+                            Route::get('/update/{id}', 'showUpdateForm')->name('prendreClasse.updateForm');
+                            Route::post('/update', 'update')->name('prendreClasse.update');
+                            Route::get('/delete/{id}', 'delete')->name('prendreClasse.delete');
                         });
                 });
         });

@@ -17,10 +17,10 @@
                       <form action="{{ route('professeur.save') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="Type SMS" class="form-label">Choisir le Type de SMS</label>
+                            <label for="Type SMS" class="form-label">Choisir la matière</label>
                             <div class="input-group input-group-merge">
                                 <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" name="matiere">
-                                    <option selected="">Selectionner le type</option>
+                                    <option selected="">Selectionner la matière</option>
                                     @foreach ($matieres as $item)
                                         <option value="{{ $item->id }}">{{ $item->nom }}</option>
                                     @endforeach
