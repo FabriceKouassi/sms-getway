@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbsenceSendController;
 use App\Http\Controllers\AnnonceController;
 use App\Http\Controllers\AnnonceSendController;
 use App\Http\Controllers\AuthController;
@@ -170,17 +171,11 @@ Route::prefix('admin_space')->middleware('auth')
 
             Route::prefix('/absence-send')
                 ->group(function () {
-                    Route::controller(AnnonceSendController::class)
+                    Route::controller(AbsenceSendController::class)
                         ->group(function () {
-                            Route::get('/', 'index')->name('annonce.all');
-                            Route::post('/', 'sendAnnonceByMail')->name('annonce.mail');
-
-                            Route::get('/save', 'showSaveForm')->name('annonce.saveForm');
-                            Route::post('/save', 'save')->name('annonce.save');
-                            Route::get('/update/{id}', 'showUpdateForm')->name('annonce.updateForm');
-                            Route::post('/update', 'update')->name('annonce.update');
-                            Route::get('/delete/{id}', 'delete')->name('annonce.delete');
-
+                            Route::get('/', 'index')->name('absence.all');
+                            Route::get('/save/{id}', 'showSaveForm')->name('absence.saveForm');
+                            Route::post('/save', 'save')->name('absence.save');
                         });
                 });
 

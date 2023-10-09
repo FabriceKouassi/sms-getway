@@ -69,7 +69,7 @@
                 <div class="badge bg-danger rounded-pill ms-auto">5</div>
             </a>
         </li> --}}
-
+        
         <li class="menu-item active open">
             <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -135,12 +135,6 @@
             </a>
         </li> --}}
         <li class="menu-item">
-            <a href="{{ route('annonce.all') }}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support">Envoyer Annonces</div>
-            </a>
-        </li>
-        <li class="menu-item">
             <a href="{{ route('eleve.all') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
                 <div data-i18n="Chat">Eleves</div>
@@ -156,6 +150,18 @@
             </a>
         </li>
         <li class="menu-item">
+            <a href="{{ route('annonce.all') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-support"></i>
+                <div data-i18n="Support">Envoyer Annonces</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="{{ route('absence.all') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-calendar"></i>
+                <div data-i18n="Support">Gérer les Absences</div>
+            </a>
+        </li>
+        {{-- <li class="menu-item">
             <a
             href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
             target="_blank"
@@ -460,6 +466,6 @@
             <i class="menu-icon tf-icons bx bx-file"></i>
             <div data-i18n="Documentation">Documentation</div>
             </a>
-        </li>
+        </li> --}}
     </ul>
 </aside>

@@ -4,24 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AbsenceSend extends Model
 {
     use HasFactory;
 
-    protected $table = 'annonce_sends';
+    protected $table = 'absence_sends';
     protected $fillable = [
-        'sms_id',
-        'parent_id'
+        'message',
+        'eleve_id',
+        'user_id',
     ];
 
-    public function sms(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(SMS::class, 'sms_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function parent(): BelongsTo
+    public function eleve(): BelongsTo
     {
-        return $this->belongsTo(_Parent::class, 'parent_id');
+        return $this->belongsTo(Eleve::class, 'eleve_id');
     }
 }
