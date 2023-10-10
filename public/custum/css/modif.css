@@ -8,3 +8,25 @@
 {
     height: 600px !important;
 }
+
+.cd__main{
+    background: #fff;
+    padding: 20px !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  .cd__main{
+      display: flex;
+      width: 100%;
+  }
+
+@media only screen and (min-width: 1360px){
+    .cd__main{
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 24px;
+    }
+}

@@ -46,7 +46,7 @@ data-template="vertical-menu-template-free"
         <link rel="stylesheet" href="{{ asset('model/assets/vendor/libs/apex-charts/apex-charts.css')}}" />
         {{-- ---- --}}
 
-            <link rel="stylesheet" href="{{ asset('custum/css/demo.css')}}">
+            {{-- <link rel="stylesheet" href="{{ asset('custum/css/demo.css')}}"> --}}
             <link rel="stylesheet" href="{{ asset('custum/css/style.css')}}">
             <link rel="stylesheet" href="{{ asset('custum/css/modif.css')}}">
 

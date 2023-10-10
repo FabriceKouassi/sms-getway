@@ -69,7 +69,7 @@
                 <div class="badge bg-danger rounded-pill ms-auto">5</div>
             </a>
         </li> --}}
-        
+
         <li class="menu-item active open">
             <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -146,7 +146,7 @@
         <li class="menu-item">
             <a href="{{ route('prendreClasse.all') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Affectation professeurs</div>
+                <div data-i18n="Basic">Affectation professeur</div>
             </a>
         </li>
         <li class="menu-item">

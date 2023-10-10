@@ -13,7 +13,7 @@ body{
   justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
-    
+
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -96,7 +96,7 @@ body{
    text-decoration: none;
 }
 .cd__credit a:hover{
-   color: #1DBF73; 
+   color: #1DBF73;
 }
 .cd__credit a:hover:after{
     font-family: FontAwesome;
@@ -107,11 +107,11 @@ body{
 }
 .cd__main{
   background: #fff;
-  padding: 20px;
+  padding: 20px !important;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  
+
 }
 .cd__main{
     display: flex;
@@ -122,7 +122,7 @@ body{
     .cd__main{
       max-width: 1280px;
       margin-left: auto;
-      margin-right: auto; 
+      margin-right: auto;
       padding: 24px;
     }
 }
