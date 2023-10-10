@@ -19,7 +19,6 @@
                       <form action="{{ route('annonce.update') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-
                             <label for="Type SMS" class="form-label">Choisir le Type de SMS</label>
                             <div class="input-group input-group-merge">
                                 <input type="hidden" class="form-control" name="dataID" value="{{ $annonce->id }}">

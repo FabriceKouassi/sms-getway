@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Eleve;
+use App\Models\Matiere;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,6 +18,10 @@ return new class extends Migration
             $table->id();
             $table->integer('status')->default(0);
             $table->foreignIdFor(Eleve::class, 'eleve_id')
+                    ->constrained()
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+            $table->foreignIdFor(Matiere::class, 'matiere_id')
                     ->constrained()
                     ->onDelete('cascade')
                     ->onUpdate('cascade');

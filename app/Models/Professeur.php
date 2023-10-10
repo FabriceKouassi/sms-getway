@@ -36,6 +36,6 @@ class Professeur extends Model
 
     public function professeur_classe()
     {
-        return $this->hasManyThrough('App\Models\ProfesseurClass','App\Models\Classes','professeur_id','classe_id');
+        return $this->hasManyThrough(Professeur::class,Classe::class,'professeur_id','classe_id');
     }
 }

@@ -15,6 +15,7 @@ class AbsenceSend extends Model
         'message',
         'eleve_id',
         'user_id',
+        'matiere_id',
     ];
 
     public function user(): BelongsTo
@@ -25,5 +26,10 @@ class AbsenceSend extends Model
     public function eleve(): BelongsTo
     {
         return $this->belongsTo(Eleve::class, 'eleve_id');
+    }
+
+    public function matiere(): BelongsTo
+    {
+        return $this->belongsTo(Matiere::class, 'matiere_id');
     }
 }

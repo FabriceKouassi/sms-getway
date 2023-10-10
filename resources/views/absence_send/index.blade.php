@@ -9,11 +9,11 @@
 
             <div class="row">
                 <div class="col-12">
-                    @forelse ($classes as $item)
-                        <a class="btn btn-primary" href="{{ route('absence.saveForm', [$item->id]) }}">{{ $item->nom }}</a>
+                    @forelse ($classes_enseignes as $item)
+                        <a class="btn btn-primary" href="{{ route('absence.saveForm', [$item->id]) }}">{{ $item->classes->nom }}</a>
                     @empty
                         <div class="badge bg-label-danger fs-tiny rounded-pill ms-auto" style="font-size: 15px !important; font-weight: bold;">
-                            Veuillez créer des classes svp !
+                            Veuillez affecter les professeurs aux classes svp !
                         </div>
                     @endforelse
                 </div>

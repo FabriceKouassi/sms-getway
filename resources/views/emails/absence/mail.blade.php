@@ -12,7 +12,8 @@
         <ul>
             <li>
                 <strong>Message</strong> :
-                Votre enfant en classe de <strong>{{ $item['classe'] }}</strong> au matricule <strong>{{ $item['matricule'] }}</strong> est absent au cour de xxxxx. <br>
+                Votre enfant en classe de <strong>{{ $item['classe'] }}</strong> au matricule <strong>{{ $item['matricule'] }}</strong> est absent au cour de <strong>{{ $item['matiere'] }}</strong>
+                le <strong>{{ $item['date'] }}</strong>. <br>
                 Merci de le rappeler à l'ordre ou de nous communiqués toutes informations relatives a son absence. <br>
                 Cordialement. <br>
                 <strong>La direction</strong>
