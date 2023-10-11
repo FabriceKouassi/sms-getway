@@ -12,8 +12,8 @@
                     <table id="example" class="table table-striped" style="width:100%">
                         <thead>
                             <tr>
-                                <th>Noms</th>
-                                <th>Prénoms</th>
+                                <th>Noms & Prénoms</th>
+                                <th>Emails</th>
                                 <th>Contacts</th>
                                 <th>Adresse</th>
                                 <th>Actions</th>
@@ -22,8 +22,8 @@
                         <tbody>
                             @foreach ($parent as $item)
                                 <tr>
-                                    <td>{{ $item->nom }}</td>
-                                    <td>{{ $item->prenoms }}</td>
+                                    <td>{{ $item->nom }} {{ $item->prenoms }}</td>
+                                    <td>{{ $item->email }}</td>
                                     <td>{{ $item->contact }}</td>
                                     <td>{{ $item->adresse }}</td>
                                     <td>

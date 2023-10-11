@@ -9,6 +9,11 @@
     height: 600px !important;
 }
 
+.h-500
+{
+    height: 500px !important;
+}
+
 .cd__main{
     background: #fff;
     padding: 20px !important;

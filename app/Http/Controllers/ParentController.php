@@ -22,7 +22,12 @@ class ParentController extends Controller
 
     public function showSaveForm()
     {
-        return view('parent.save');
+        $title = 'Parent';
+
+        $param = [
+            'title' => $title
+        ];
+        return view('parent.save', $param);
     }
 
     public function save(Request $request)

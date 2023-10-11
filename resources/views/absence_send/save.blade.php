@@ -33,7 +33,7 @@
 
                             <div class="mb-3">
                                 <label for="Type Annonce" class="form-label">Sélectionner les élèves absents</label>
-                                <div class="input-group input-group-merge">
+                                <div class="input-group input-group-merge h-500">
                                     <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example" name="absences[]" multiple>
                                         @foreach ($eleves as $eleve)
                                             <option value="{{ $eleve->id }}">{{ $eleve->nom }} {{ $eleve->prenoms }}</option>
