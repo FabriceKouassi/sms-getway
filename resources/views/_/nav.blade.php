@@ -468,4 +468,9 @@
             </a>
         </li> --}}
     </ul>
+
+    <a class="btn btn-custum" href="{{ route('logout') }}">
+        <i class="bx bx-power-off me-2"></i>
+        <span class="align-middle">Se déconnecter</span>
+    </a>
 </aside>
